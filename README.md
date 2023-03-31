@@ -3,4 +3,6 @@
 
 ## Database name: php3_asm_laptopstore
 
+## php artisan migrate:refresh --seed
+
 

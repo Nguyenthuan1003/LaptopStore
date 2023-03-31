@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->string('customer_name');
             $table->string('customer_email');
             $table->string('customer_address');
             $table->string('customer_phone_number');
-            $table->integer('shipping_fee')->default(0);
             $table->integer('tax_fee')->default(0);
+            $table->integer('shipping_fee')->default(0);
             $table->boolean('payment_type')->default(false)->comment('false: COD, true: online');
             $table->integer('total_cost');
             $table->integer('discount_value')->default(0)->nullable();

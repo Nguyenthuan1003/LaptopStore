@@ -16,16 +16,19 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             WebSettingsTableSeeder::class,
-            CategorySeeder::class,
-            ProductSeeder::class,
-            ProductGallerySeeder::class,
-            ProductAttributeSeeder::class,
-            AttributeValueSeeder::class,
-            UserSeeder::class,
-            VoucherSeeder::class,
-            OrderSeeder::class,
-            OrderDetailSeeder::class,
-            BannerSeeder::class
+            ExtraCostsTableSeeder::class,
+            CategoriesTableSeeder::class,
+            SubCategoriesTableSeeder::class,
+            ProductsTableSeeder::class,
+            ProductOptionsTableSeeder::class,
+            ProductGalleriesTableSeeder::class,
+            ProductAttributesTableSeeder::class,
+            UsersTableSeeder::class,
+            VouchersTableSeeder::class,
+            OrdersTableSeeder::class,
+            OrderDetailsTableSeeder::class,
+            ShoppingCartsTableSeeder::class,
+            BannersTableSeeder::class
         ]);
     }
 }

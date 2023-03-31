@@ -14,13 +14,18 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = DB::table('categories as c')
-            ->leftJoin('products as p', 'c.id', '=', 'p.category_id')
-            ->select('c.id', 'c.name', 'c.deleted_at', DB::raw('count(p.category_id) as product_by_category'))
-            ->groupBy('c.id', 'c.name', 'c.deleted_at', 'p.category_id')
-            ->orderByDesc('product_by_category')
-            // ->whereNull('deleted_at')
-            ->get();
+        // $categories = DB::table('categories as c')
+        //     ->leftJoin('sub_categories as sc', 'c.id', '=', 'sc.category_id')
+        //     // ->leftJoin('products as p', 'sc.id', '=', 'p.sub_category_id')
+        //     // ->select('c.id', 'c.name', DB::raw('count(p.sub_category_id) as product_by_category'))
+        //     // ->groupBy('c.id', 'c.name', 'p.sub_category_id')
+        //     // ->orderByDesc('product_by_category')
+        //     ->get();
+        $categories = DB::table('categories as c')->select('c.id', 'c.name')->selectSub(function ($query) {
+            $query->from('sub_categories as sc')->whereColumn('sc.category_id', 'c.id')->selectRaw('count(sc.id)');
+        }, 'subcat_count')->selectSub(function ($query) {
+            $query->from('products as p')->leftJoin('sub_categories as sc', 'sc.id', '=', 'p.sub_category_id')->whereColumn('sc.category_id', 'c.id')->selectRaw('ifnull(count(p.sub_category_id), 0)');
+        }, 'prod_count')->orderByDesc('subcat_count')->orderByDesc('prod_count')->get();
 
         return view('admin.category.index', ['categories' => $categories]);
     }

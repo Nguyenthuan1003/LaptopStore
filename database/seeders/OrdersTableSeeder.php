@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class OrderSeeder extends Seeder
+class OrdersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,7 +21,10 @@ class OrderSeeder extends Seeder
                 'customer_address' => 'fpt polytechnic hn',
                 'customer_phone_number' => '0342 737 862',
                 'tax_fee' => 0,
+                'shipping_fee' => '30000',
                 'payment_type' => 0,
+                'total_cost' => 99999999,
+                'discount_value' => 100000,
                 'note' => 'nhà ở đối diện trường học FPT POLY',
                 'date_receive' => null,
                 'status' => 1,
@@ -29,33 +32,40 @@ class OrderSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'user_id' => 3,
-                'customer_name' => 'tuandz3',
+                'user_id' => null,
+                'customer_name' => 'tuandz',
                 'customer_email' => 'tuannvph19078@fpt.edu.vn',
                 'customer_address' => 'fpt polytechnic hn',
                 'customer_phone_number' => '0342 737 862',
                 'tax_fee' => 0,
+                'shipping_fee' => '30000',
                 'payment_type' => 0,
+                'total_cost' => 99999999,
+                'discount_value' => 100000,
                 'note' => 'nhà ở đối diện trường học FPT POLY',
-                'date_receive' => now(),
+                'date_receive' => null,
                 'status' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'user_id' => 4,
-                'customer_name' => 'tuandz4',
+                'user_id' => null,
+                'customer_name' => 'tuandz',
                 'customer_email' => 'tuannvph19078@fpt.edu.vn',
                 'customer_address' => 'fpt polytechnic hn',
                 'customer_phone_number' => '0342 737 862',
                 'tax_fee' => 0,
+                'shipping_fee' => '30000',
                 'payment_type' => 0,
-                'note' => 'nhà ở phía sau trường học FPT POLY',
+                'total_cost' => 99999999,
+                'discount_value' => 100000,
+                'note' => 'nhà ở đối diện trường học FPT POLY',
                 'date_receive' => null,
                 'status' => 0,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+
         ]);
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class VoucherSeeder extends Seeder
+class VouchersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,28 +15,28 @@ class VoucherSeeder extends Seeder
     {
         DB::table('vouchers')->insert([
             [
-                'name' => 'Giảm giá ngày đàn ông Việt Nam',
-                'code' => 'menvn70',
-                'type_voucher' => 1,
+                'name' => 'menvn70',
+                'type_voucher' => 0,
                 'value' => 70,
+                'max_des_value' => 200000,
                 'description' => 'Nhân ngày đàn ông Việt Nam, vì tôn vinh những đóng góp và hy sinh âm thầm của họ chúng tôi đã tạo mã giảm giá này!',
                 'quantity' => 50,
                 'count_use' => 0,
+                'date_expired' => '2023-05-07',
                 'status' => 1,
-                'date_expired' => '2023-05-25',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Giảm giá cho Polyers',
-                'code' => 'poly500',
-                'type_voucher' => 0,
+                'name' => 'poly500',
+                'type_voucher' => 1,
                 'value' => 500000,
+                'max_des_value' => null,
                 'description' => 'Vì tôn vinh những đóng góp vào giáo dục của FPT Polytechnic chúng tôi đã tạo mã giảm giá này!',
                 'quantity' => 1,
                 'count_use' => 0,
+                'date_expired' => '2023-05-08',
                 'status' => 1,
-                'date_expired' => '2023-05-25',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

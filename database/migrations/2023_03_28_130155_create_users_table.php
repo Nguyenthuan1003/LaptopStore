@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('image')->default('user_avatar.jpg')->nullable();
             $table->string('phone_number', 20)->nullable();
             $table->string('address')->nullable();
-            $table->string('birthday')->nullable();
+            $table->date('birthday')->nullable();
             $table->string('gender')->nullable();
             $table->boolean('role')->default(false)->comment('false: user, true: admin');
             $table->rememberToken();

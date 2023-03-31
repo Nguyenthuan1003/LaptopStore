@@ -104,13 +104,14 @@
             </p>
             <a href="/categories/create" class="d-block btn btn-success text-white w-auto">&#43; Thêm mới</a>
         </div>
-        {{-- {{ $categories }} --}}
+
         <div class="table-responsive px-lg-5">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>STT</th>
                         <th>Tên</th>
+                        <th>Số danh mục con phẩm</th>
                         <th>Số sản phẩm</th>
                         {{-- <th>Chức năng</th> --}}
                     </tr>
@@ -120,7 +121,8 @@
                         <tr>
                             <td>{{ ++$index }}</td>
                             <td class="text-success">{{ $category->name }}</td>
-                            <td class="text-muted">{{ $category->product_by_category }}</td>
+                            <td class="text-muted">{{ $category->subcat_count }}</td>
+                            <td class="text-muted">{{ $category->prod_count }}</td>
                             {{-- <td class="bg-danger text-white w-25">
                                 <a href="/categories/{{ $category->id }}/soft-delete">
                                     Xóa

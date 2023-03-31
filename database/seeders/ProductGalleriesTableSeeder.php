@@ -6,62 +6,50 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class BannerSeeder extends Seeder
+class ProductGalleriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('banners')->insert([
+        DB::table('product_galleries')->insert([
             [
-                'image' => 'banner1.jpg',
-                'location' => 1,
+                'image' => 'legion1a.png', 
+                'product_id' => 5, 
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'image' => 'banner2.jpg',
-                'location' => 1,
+                'image' => 'legion1b.png', 
+                'product_id' => 5, 
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'image' => 'banner3.jpg',
-                'location' => 1,
+                'image' => 'legion1c.png', 
+                'product_id' => 5,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'image' => 'banner4.jpg',
-                'location' => 1,
+                'image' => 'legion1d.png', 
+                'product_id' => 5, 
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'image' => 'banner5.jpg',
-                'location' => 1,
+                'image' => 'legion1e.png', 
+                'product_id' => 5, 
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'image' => 'banner6.jpg',
-                'location' => 0,
+                'image' => 'legion1f.png', 
+                'product_id' => 5, 
                 'created_at' => now(),
                 'updated_at' => now()
             ],
-            [
-                'image' => 'banner7.jpg',
-                'location' => 0,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'image' => 'banner8.jpg',
-                'location' => 0,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
         ]);
     }
 }
